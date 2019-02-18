@@ -1,3 +1,7 @@
+package com.LogManage;
+
+import com.LogManage.Record;
+
 import javax.persistence.*;
 
 public class RecordsDAO {
@@ -9,9 +13,9 @@ public class RecordsDAO {
     }
 
     public Record createRecord(Client client,
-                                       String login,
-                                       String password,
-                                       String url)
+                               String login,
+                               String password,
+                               String url)
     {
         Record rec = new Record(login,password,url);
         rec.setClient(client);

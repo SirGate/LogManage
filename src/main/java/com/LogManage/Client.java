@@ -1,3 +1,5 @@
+package com.LogManage;
+
 import javax.persistence.*;
 import java.util.List;
 

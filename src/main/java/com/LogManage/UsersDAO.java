@@ -4,6 +4,8 @@ package com.LogManage;
 
 import javax.persistence.*;
 
+import java.util.List;
+
 import static com.LogManage.User.FIND_BY_LOGIN_QUERY;
 
 public class UsersDAO {
@@ -24,8 +26,13 @@ public class UsersDAO {
       //  return em.createQuery("from User where login = :lll", User.class)
         //        .setParameter("lll", login)
           //      .getSingleResult();
-        return em.createNamedQuery(User.FIND_BY_LOGIN_QUERY, User.class)
+        return em.createNamedQuery(FIND_BY_LOGIN_QUERY, User.class)
                 .setParameter("lll", login)
                 .getSingleResult();
     }
+
+    public List<User> listUsers() {
+        return em.createQuery("from User",User.class).getResultList();
+    }
+
 }

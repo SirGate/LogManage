@@ -9,7 +9,7 @@ import static com.LogManage.User.FIND_BY_LOGIN_QUERY;
 @DiscriminatorColumn(name = "KIND", length = 2, discriminatorType = DiscriminatorType.STRING)
 @Table(name = "users")
 @NamedQueries(
-        @NamedQuery(name = User.FIND_BY_LOGIN_QUERY, query = "from User where login = :lll")
+        value = @NamedQuery(name = FIND_BY_LOGIN_QUERY, query = "from User where login = :lll")
 )
 public class User {
 
